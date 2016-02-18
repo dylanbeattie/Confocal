@@ -1,9 +1,14 @@
 ﻿using System.Web.Optimization;
+using BundleTransformer.Core.Resolvers;
+using BundleTransformer.Core.Transformers;
 
 namespace ConjaWeb {
     public class BundleConfig {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles) {
+
+            BundleResolver.Current = new CustomBundleResolver();
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery-ui-{version}.js"
@@ -21,9 +26,18 @@ namespace ConjaWeb {
             //    "~/Scripts/bootstrap.js",
             //    "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/bundles/styles").Include(
-                //"~/Content/bootstrap.css",
-                "~/styles/styles.css"));
+            var stylesBundle = new StyleBundle("~/bundles/styles");
+            stylesBundle.Include("~/styles/styles.scss");
+            stylesBundle.Transforms.Add(new StyleTransformer());
+            bundles.Add(stylesBundle);
+            //var stylesBundle = new StyleBundle("~/Skylight/Styles/css").Include(
+            //    "~/Skylight/Styles/common.css",
+            //    "~/Skylight/Styles/grid960.css",
+            //    "~/Skylight/Styles/layout.scss",
+            //    "~/Skylight/Styles/jQueryUI/skylight/jquery-ui-{version}.custom.css"
+            //);
+
+            //bundles.Add(stylesBundle);
         }
     }
 }

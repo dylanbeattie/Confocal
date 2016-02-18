@@ -6,21 +6,72 @@
 <p>"Domain Architecture Isomorphism: I Fought Conway's Law (and the law won)"</p>
 <p>Dylan Beattie</p>
 <hr />
-<p>Did you enjoy the talk?</p>
-<form class="feedback">
+<form class="feedback" action="@Url.Action("Feedback", "Talks")" method="POST">
+    <p>Did you enjoy the talk?</p>
+    <fieldset>
+        @foreach (var option in Model.EnjoyOptions) {
+            <label for="enjoy-@option.Value" class="@option.Value @(option.Selected ? "active" : "")">
+                <input type="radio" name="enjoy" value="@option.Value" id="enjoy-@option.Value"
+                @(option.Selected ? "checked='checked'" : "") />
+                @option.Label
+            </label>
+        }
+    </fieldset>
+    <p>Did you learn anything useful?</p>
+    <fieldset>
+        @foreach (var option in Model.LearnOptions) {
+            <label for="learn-@option.Value" class="@option.Value @(option.Selected ? "active" : "")">
+                <input type="radio" name="learn" value="@option.Value" id="learn-@option.Value"
+                @(option.Selected ? "checked='checked'" : "") />
+                @option.Label
+            </label>
+        }
+    </fieldset>
     <div>
-        <a class="err " href="#" title="I'm really confused now.">&nbsp;</a>
-        <a class="sad" href="#" title="It made me unhappy..">&nbsp;</a>
-        <a class="zzz " href="#" title="I was falling asleep.">&nbsp;</a>
-        <a class="meh " href="#" title="It was OK, I guess">&nbsp;</a>
-        <a class="woo " href="#" title="I liked it.">&nbsp;</a>
-        <a class="yay " href="#" title="I loved it.">&nbsp;</a>
-    </div><div>
-        <a class="err active" href="#" title="I'm really confused now'.">&nbsp;</a>
-        <a class="sad active" href="#" title="It made me unhappy..">&nbsp;</a>
-        <a class="zzz active" href="#" title="I was falling asleep.">&nbsp;</a>
-        <a class="meh active" href="#" title="It was OK, I guess">&nbsp;</a>
-        <a class="woo active" href="#" title="I liked it.">&nbsp;</a>
-        <a class="yay active" href="#" title="I loved it.">&nbsp;</a>
+        <p>
+            <label for="oneThingYouLiked">
+                Share one thing you liked about this talk:
+            </label>
+        </p>
+        <textarea name="oneThingYouLiked">@Model.OneThingYouLiked</textarea>
+    </div>
+    <div>
+        <p>
+            <label for="oneIdeaToImprove">
+                Share one idea for making this talk better:
+            </label>
+        </p>
+        <textarea name="oneIdeaToImprove">@Model.OneIdeaToImprove</textarea>
+
+    </div>
+    <!--
+        <div>
+            <p><label>Who are you? (optional!)</label></p>
+            <p><input type="text" name="who_name" placeholder="Your full name" value="@Model."/></p>
+            <p><input type="text" name="who_email" placeholder="email or Twitter name" /></p>
+        </div>
+        -->
+    <div>
+        <p>
+            <input type="submit" value="Send Feedback" />
+        </p>
     </div>
 </form>
+@section scripts
+{
+    <script>
+        $(function () {
+            $("form.feedback fieldset label").each(function () {
+                $(this).attr("title", $(this).text());
+            });
+            $("form.feedback fieldset label").click(function () {
+                var $this = $(this);
+                $this.closest("fieldset").children("label").each(function () {
+                    $(this).removeClass("active");
+                });
+                $(this).addClass("active");
+            });
+
+        });
+    </script>
+}
