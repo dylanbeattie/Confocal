@@ -1,0 +1,82 @@
+﻿html {
+    font-family: Trebuchet MS, Arial, sans-serif;
+}
+
+body, header, article, footer {
+    text-align: center;
+}
+
+footer {
+    margin-top: 16px;
+    font-size: 85%;
+}
+
+input[type=text], input[type=submit] {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid #999;
+}
+
+form#code-form input {
+    font-size: 150%;
+    text-align: center;
+}
+
+    form#code-form input[type=text] {
+        width: 4em;
+    }
+
+    form#code-form input[type=submit] {
+        padding: 4px 16px;
+        background-color: #393;
+        font-weight: bold;
+        color: #fff;
+    }
+
+        form#code-form input[type=submit]:hover {
+            background-color: #6c6;
+        }
+
+
+form.feedback a {
+    width: 36px;
+    height: 36px;
+    margin: 4px;
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 36px 216px;
+    padding: 0px;
+    display: inline-block;
+    border: 1px solid #f0f;
+    text-decoration: none;
+    background-image: url(/Content/Images/images/ratings_normal.png);
+}
+
+    form.feedback a.err {
+        background-position: 0 0;
+    }
+    form.feedback a.sad {
+        background-position: 0 -36px;
+    }
+
+    form.feedback a.meh {
+        background-position: 0 -72px;
+    }
+
+    form.feedback a.woo {
+        background-position: 0 -108px;
+    }
+
+    form.feedback a.yay {
+        background-position: 0 -144px;
+    }
+    
+    form.feedback a.zzz {
+        background-position: 0 -180px;
+    }
+
+    form.feedback a.active {
+        border-color: #999;
+        background-image: url(/Content/Images/images/ratings_active.png);
+    }

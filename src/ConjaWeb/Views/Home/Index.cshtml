@@ -1,0 +1,12 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Feedback";
+}
+
+<h1>Share your feedback</h1>
+<form action="@Url.Action("Feedback", "Talks")" id="code-form">
+    <input type="text" name="code" placeholder="code" />
+    <input type="submit" value="Go!" />
+</form>
+
