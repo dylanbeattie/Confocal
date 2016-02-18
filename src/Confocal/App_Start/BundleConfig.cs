@@ -2,7 +2,7 @@
 using BundleTransformer.Core.Resolvers;
 using BundleTransformer.Core.Transformers;
 
-namespace ConjaWeb {
+namespace Confocal {
     public class BundleConfig {
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles) {

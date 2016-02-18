@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ConjaWeb.Models;
+using Confocal.Models;
 
-namespace ConjaWeb.Controllers {
+namespace Confocal.Controllers {
     public class HomeController : Controller {
         // GET: Home
         public ActionResult Index() {

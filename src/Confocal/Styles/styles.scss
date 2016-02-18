@@ -94,11 +94,11 @@ form.feedback label.sad {
     background-position: $icon_padding (-72px / $icon_scaling) + $icon_padding;
 }
 
-form.feedback label.meh {
+form.feedback label.yes {
     background-position: $icon_padding (-72px * 2 / $icon_scaling) + $icon_padding
 }
 
-form.feedback label.yes {
+form.feedback label.meh {
     background-position: $icon_padding (-72px * 3 / $icon_scaling) + $icon_padding
 }
 

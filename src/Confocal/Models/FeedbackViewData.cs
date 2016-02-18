@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ConjaWeb.Models {
+namespace Confocal.Models {
     public class FeedbackViewData {
 
         public string TalkSubject { get; set; }
