@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Confocal.Data;
 using Confocal.Models;
 
 namespace Confocal.Controllers {
@@ -15,6 +16,11 @@ namespace Confocal.Controllers {
     }
 
     public class TalksController : Controller {
+        public ActionResult Index() {
+            using (var db = new ConfocalDbContext()) {
+                return (View(db.Talks.ToList()));
+            }
+        }
         public ActionResult Feedback(string code) {
             var data = new FeedbackViewData();
             return (View(data));

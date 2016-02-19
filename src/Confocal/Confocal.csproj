@@ -53,6 +53,12 @@
     <Reference Include="BundleTransformer.SassAndScss">
       <HintPath>..\packages\BundleTransformer.SassAndScss.1.9.81\lib\net40\BundleTransformer.SassAndScss.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="LibSassHost, Version=0.4.3.0, Culture=neutral, PublicKeyToken=3e24e88796a38e46, processorArchitecture=MSIL">
       <HintPath>..\packages\LibSassHost.0.4.3\lib\net40-client\LibSassHost.dll</HintPath>
       <Private>True</Private>
@@ -170,6 +176,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Data\ConfocalDbContext.cs" />
+    <Compile Include="Data\Migrations\201602191627060_AddTalkTable.cs" />
+    <Compile Include="Data\Migrations\201602191627060_AddTalkTable.Designer.cs">
+      <DependentUpon>201602191627060_AddTalkTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\201602191628286_SetDefaultTalkIdToNewSequentialId.cs" />
+    <Compile Include="Data\Migrations\201602191628286_SetDefaultTalkIdToNewSequentialId.Designer.cs">
+      <DependentUpon>201602191628286_SetDefaultTalkIdToNewSequentialId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,6 +201,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Talks\Feedback.cshtml" />
+    <Content Include="Views\Talks\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -194,6 +211,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Migrations\201602191627060_AddTalkTable.resx">
+      <DependentUpon>201602191627060_AddTalkTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201602191628286_SetDefaultTalkIdToNewSequentialId.resx">
+      <DependentUpon>201602191628286_SetDefaultTalkIdToNewSequentialId.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
