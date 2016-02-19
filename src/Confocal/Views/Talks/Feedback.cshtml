@@ -1,0 +1,77 @@
+﻿@model Confocal.Models.FeedbackViewData
+
+@{
+    ViewBag.Title = "title";
+}
+<p>"Domain Architecture Isomorphism: I Fought Conway's Law (and the law won)"</p>
+<p>Dylan Beattie</p>
+<hr />
+<form class="feedback" action="@Url.Action("Feedback", "Talks")" method="POST">
+    <p>Did you enjoy the talk?</p>
+    <fieldset>
+        @foreach (var option in Model.EnjoyOptions) {
+            <label for="enjoy-@option.Value" class="@option.Value @(option.Selected ? "active" : "")">
+                <input type="radio" name="enjoy" value="@option.Value" id="enjoy-@option.Value"
+                @(option.Selected ? "checked='checked'" : "") />
+                @option.Label
+            </label>
+        }
+    </fieldset>
+    <p>Did you learn anything useful?</p>
+    <fieldset>
+        @foreach (var option in Model.LearnOptions) {
+            <label for="learn-@option.Value" class="@option.Value @(option.Selected ? "active" : "")">
+                <input type="radio" name="learn" value="@option.Value" id="learn-@option.Value"
+                @(option.Selected ? "checked='checked'" : "") />
+                @option.Label
+            </label>
+        }
+    </fieldset>
+    <div>
+        <p>
+            <label for="oneThingYouLiked">
+                Share one thing you liked about this talk:
+            </label>
+        </p>
+        <textarea name="oneThingYouLiked">@Model.OneThingYouLiked</textarea>
+    </div>
+    <div>
+        <p>
+            <label for="oneIdeaToImprove">
+                Share one idea for making this talk better:
+            </label>
+        </p>
+        <textarea name="oneIdeaToImprove">@Model.OneIdeaToImprove</textarea>
+
+    </div>
+    <!--
+        <div>
+            <p><label>Who are you? (optional!)</label></p>
+            <p><input type="text" name="who_name" placeholder="Your full name" value="@Model."/></p>
+            <p><input type="text" name="who_email" placeholder="email or Twitter name" /></p>
+        </div>
+        -->
+    <div>
+        <p>
+            <input type="submit" value="Send Feedback" />
+        </p>
+    </div>
+</form>
+@section scripts
+{
+    <script>
+        $(function () {
+            $("form.feedback fieldset label").each(function () {
+                $(this).attr("title", $(this).text());
+            });
+            $("form.feedback fieldset label").click(function () {
+                var $this = $(this);
+                $this.closest("fieldset").children("label").each(function () {
+                    $(this).removeClass("active");
+                });
+                $(this).addClass("active");
+            });
+
+        });
+    </script>
+}
