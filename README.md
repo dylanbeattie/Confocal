@@ -1,2 +1,3 @@
-# Conja
-You know. For talks.
+# Confocal
+
+You know. For conferences.
