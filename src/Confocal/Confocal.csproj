@@ -157,7 +157,7 @@
     <Content Include="Scripts\jquery-2.2.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
-    <None Include="Styles\styles.scss" />
+    <Content Include="Styles\styles.scss" />
     <Content Include="Styles\styles.css">
       <DependentUpon>styles.scss</DependentUpon>
     </Content>
