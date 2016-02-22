@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Confocal.Data;
-using Confocal.Models;
 
 namespace Confocal.Controllers {
     public class HomeController : Controller {
@@ -13,22 +9,9 @@ namespace Confocal.Controllers {
         public ActionResult Index() {
             return View();
         }
-    }
 
-    public class TalksController : Controller {
-        public ActionResult Index() {
-            using (var db = new ConfocalDbContext()) {
-                return (View(db.Talks.ToList()));
-            }
-        }
-        public ActionResult Feedback(string code) {
-            var data = new FeedbackViewData();
-            return (View(data));
-        }
-
-        [HttpPost]
-        public ActionResult Feedback(FeedbackViewData post) {
-            return (View(post));
+        public ActionResult WhoAmI() {
+            return (View(User));
         }
     }
 }

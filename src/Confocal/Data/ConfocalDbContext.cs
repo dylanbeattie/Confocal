@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
@@ -15,15 +13,13 @@ namespace Confocal.Data {
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder) {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
+            modelBuilder.Entity<TalkReaction>().HasRequired(p => p.Talk).WithMany(t => t.Reactions);
+
             base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<Talk> Talks { get; set; }
-    }
-
-    public class Talk {
-        public Guid TalkId { get; set; }
-        [StringLength(128)]
-        public string Title { get; set; }
+        public DbSet<TalkReaction> TalkReactions { get; set; }
     }
 }

@@ -26,11 +26,15 @@ form#code-form input[type=text] {
     width: 4em;
 }
 
-form#code-form input[type=submit] {
+input[type=submit] {
     padding: 4px 16px;
     background-color: #393;
     font-weight: bold;
     color: #fff;
+    border: 1px solid #060;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 form#code-form input[type=submit]:hover {

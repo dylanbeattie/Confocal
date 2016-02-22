@@ -20,11 +20,15 @@ form#code-form input {
 form#code-form input[type=text] {
   width: 4em; }
 
-form#code-form input[type=submit] {
+input[type=submit] {
   padding: 4px 16px;
   background-color: #393;
   font-weight: bold;
-  color: #fff; }
+  color: #fff;
+  border: 1px solid #060;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
 
 form#code-form input[type=submit]:hover {
   background-color: #6c6; }
@@ -79,10 +83,10 @@ form.feedback label.err {
 form.feedback label.sad {
   background-position: 8px -40px; }
 
-form.feedback label.meh {
+form.feedback label.yes {
   background-position: 8px -88px; }
 
-form.feedback label.yes {
+form.feedback label.meh {
   background-position: 8px -136px; }
 
 form.feedback label.wow {
