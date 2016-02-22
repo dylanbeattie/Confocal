@@ -175,6 +175,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TalksController.cs" />
     <Compile Include="Data\ConfocalDbContext.cs" />
@@ -212,9 +213,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Talks\Feedback.cshtml" />
-    <Content Include="Views\Talks\Index.cshtml" />
     <Content Include="Views\Talks\NotFound.cshtml" />
     <Content Include="Views\Talks\Thankyou.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

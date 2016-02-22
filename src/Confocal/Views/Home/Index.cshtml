@@ -4,7 +4,11 @@
     ViewBag.Title = "Feedback";
 }
 
-<h1>confocal.io</h1>
-<p>Simple feedback for user group talks by <a href="http://twitter.com/dylanbeattie">@@dylanbeattie</a></p>
-<h2><a href="@Url.Action("Index", "Talks")">Submit Feedback &raquo;</a></h2>
+<h1>Share your feedback</h1>
+<form action="@Url.Action("Feedback", "Talks")" id="code-form">
+    <input type="text" name="code" placeholder="code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+    <input type="submit" value="Go!" />
+</form>
+<p>Good feedback helps our speakers improve.</p>
+<p>Please be honest (and be nice!)</p>
 
