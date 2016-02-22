@@ -9,9 +9,5 @@ namespace Confocal.Controllers {
         public ActionResult Index() {
             return View();
         }
-
-        public ActionResult WhoAmI() {
-            return (View(User));
-        }
     }
 }

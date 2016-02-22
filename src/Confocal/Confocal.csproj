@@ -213,7 +213,6 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Talks\Feedback.cshtml" />
     <Content Include="Views\Talks\Index.cshtml" />
-    <Content Include="Views\Home\WhoAmI.cshtml" />
     <Content Include="Views\Talks\NotFound.cshtml" />
     <Content Include="Views\Talks\Thankyou.cshtml" />
     <None Include="Web.Debug.config">
