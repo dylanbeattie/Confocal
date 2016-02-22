@@ -18,5 +18,8 @@ namespace Confocal.Data {
         public string OneThingYouLiked { get; set; }
         [StringLength(256)]
         public string OneIdeaToImprove { get; set; }
+
+        public DateTimeOffset? Submitted { get; set; }
+        public string UserAgent { get; set; }
     }
 }

@@ -42,6 +42,8 @@ namespace Confocal.Controllers {
                     reaction = new TalkReaction {
                         UserGuid = userGuid,
                         TalkGuid = post.TalkGuid,
+                        UserAgent = Request.UserAgent,
+                        Submitted = DateTimeOffset.Now
                     };
                     db.TalkReactions.Add(reaction);
                 }

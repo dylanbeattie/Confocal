@@ -195,6 +195,10 @@
     <Compile Include="Data\Migrations\201602221536140_AddSpeakerNameToTalk.Designer.cs">
       <DependentUpon>201602221536140_AddSpeakerNameToTalk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\Migrations\201602222258110_AddTalkReactionMetadata.cs" />
+    <Compile Include="Data\Migrations\201602222258110_AddTalkReactionMetadata.Designer.cs">
+      <DependentUpon>201602222258110_AddTalkReactionMetadata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Migrations\Configuration.cs" />
     <Compile Include="Data\Talk.cs" />
     <Compile Include="Data\TalkReaction.cs" />
@@ -238,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Data\Migrations\201602221536140_AddSpeakerNameToTalk.resx">
       <DependentUpon>201602221536140_AddSpeakerNameToTalk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Migrations\201602222258110_AddTalkReactionMetadata.resx">
+      <DependentUpon>201602222258110_AddTalkReactionMetadata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
