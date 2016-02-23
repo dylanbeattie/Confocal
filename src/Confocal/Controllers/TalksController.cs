@@ -31,7 +31,7 @@ namespace Confocal.Controllers {
             }
         }
 
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public ActionResult Feedback(FeedbackViewData post) {
             Guid userGuid;
             TalkReaction reaction;
