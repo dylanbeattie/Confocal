@@ -58,8 +58,10 @@
     </div>
     <input type="hidden" name="talkGuid" value="@Model.TalkGuid" />
 </form>
-@section scripts
-{
+<div class="preload">
+    <img src="@Url.Content("~/Content/images/images/ratings_active.png")" />
+</div>
+@section scripts {
     <script>
         $(function () {
             $("form.feedback fieldset label").each(function () {
@@ -67,12 +69,11 @@
             });
             $("form.feedback fieldset label").click(function () {
                 var $this = $(this);
-                $this.closest("fieldset").children("label").each(function () {
+                $this.closest("fieldset").children("label").not(this).each(function () {
                     $(this).removeClass("active");
                 });
                 $(this).addClass("active");
             });
-
         });
     </script>
 }
