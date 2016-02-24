@@ -177,8 +177,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginViewModel.cs" />
     <Compile Include="Controllers\TalksController.cs" />
+    <Compile Include="Models\TalkViewData.cs" />
     <Compile Include="Data\ConfocalDbContext.cs" />
     <Compile Include="Data\Migrations\201602191627060_AddTalkTable.cs" />
     <Compile Include="Data\Migrations\201602191627060_AddTalkTable.Designer.cs">
@@ -221,6 +224,9 @@
     <Content Include="Views\Talks\NotFound.cshtml" />
     <Content Include="Views\Talks\Thankyou.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Reactions.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

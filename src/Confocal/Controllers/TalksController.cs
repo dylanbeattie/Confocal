@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Confocal.Data;
 using Confocal.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace Confocal.Controllers {
     public class TalksController : Controller {
@@ -14,15 +15,17 @@ namespace Confocal.Controllers {
             return (View("NotFound", (object)code));
         }
 
+        private Guid ReadUserGuid() {
+            return (Request.RequestContext.HttpContext.Items["user-key"] is Guid ? (Guid)Request.RequestContext.HttpContext.Items["user-key"] : new Guid());
+        }
+
         public ActionResult Feedback(string code) {
             if (String.IsNullOrEmpty(code)) return (RedirectToAction("Index", "Home"));
-            Guid userGuid;
-            TalkReaction reaction;
-            Guid.TryParse(User.Identity.Name, out userGuid);
+            var userGuid = ReadUserGuid();
             using (var db = new ConfocalDbContext()) {
                 var talk = db.Talks.FirstOrDefault(t => t.Code == code);
                 if (talk == default(Talk)) return (NotFound(code));
-                reaction = talk.Reactions.FirstOrDefault(fb => fb.UserGuid == userGuid);
+                var reaction = talk.Reactions.FirstOrDefault(fb => fb.UserGuid == userGuid);
                 if (reaction == default(TalkReaction)) reaction = new TalkReaction() {
                     Talk = talk, TalkGuid = talk.TalkGuid, UserGuid = userGuid
                 };
@@ -33,11 +36,9 @@ namespace Confocal.Controllers {
 
         [HttpPost, ValidateInput(false)]
         public ActionResult Feedback(FeedbackViewData post) {
-            Guid userGuid;
-            TalkReaction reaction;
-            Guid.TryParse(User.Identity.Name, out userGuid);
+            var userGuid = ReadUserGuid();
             using (var db = new ConfocalDbContext()) {
-                reaction = db.TalkReactions.FirstOrDefault(t => t.UserGuid == userGuid && t.TalkGuid == post.TalkGuid);
+                var reaction = db.TalkReactions.FirstOrDefault(t => t.UserGuid == userGuid && t.TalkGuid == post.TalkGuid);
                 if (reaction == default(TalkReaction)) {
                     reaction = new TalkReaction {
                         UserGuid = userGuid,

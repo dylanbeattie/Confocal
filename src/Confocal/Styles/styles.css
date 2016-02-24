@@ -1,7 +1,7 @@
 html {
   font-family: Trebuchet MS, Arial, sans-serif; }
 
-body, header, article, footer {
+header, article, footer {
   text-align: center; }
 
 footer {
@@ -104,5 +104,17 @@ form.feedback label.active {
   position: absolute;
   top: -9999px;
   left: -9999px; }
+
+table {
+  border-collapse: collapse; }
+
+table tr td, table tr th {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #999; }
+
+table tr td input {
+  width: 100%;
+  box-sizing: border-box; }
 
 /*# sourceMappingURL=styles.css.map */

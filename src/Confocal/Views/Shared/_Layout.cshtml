@@ -12,7 +12,12 @@
 <body>
     <header></header>
     <article>@RenderBody()</article>
-    <footer><a href="/about">confocal.io</a></footer>
+    <footer>
+        <a href="/about">confocal.io</a>
+        @if (User.Identity.IsAuthenticated) {
+            <text>&bull;</text> <a href="/admin">admin</a>
+        }
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @RenderSection("scripts", required: false)
 </body>

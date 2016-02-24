@@ -25,7 +25,7 @@ namespace Confocal {
                 cookie = new HttpCookie(COOKIE_NAME, guid.ToString()) { Expires = DateTime.Now.AddYears(1) };
                 Response.Cookies.Add(cookie);
             }
-            Context.User = new GenericPrincipal(new GenericIdentity(guid.ToString(), "confocal"), new string[] { });
+            Context.Items.Add("user-key", guid);
         }
     }
 }

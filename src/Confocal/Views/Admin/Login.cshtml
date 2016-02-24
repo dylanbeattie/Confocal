@@ -1,0 +1,25 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Log In";
+}
+
+<h2>Log On</h2>
+<form action="@Url.Action("Login", "Admin")" method="post">
+    @Html.ValidationSummary()
+    <p>
+        <input type="text" name="username" placeholder="username " />
+    </p>
+    <p>
+        <input type="password" name="password" placeholder="password" />
+    </p>
+    <p>
+        <label for="rememberMe-checkbox">
+            <input type="checkbox" name="rememberMe" value="True" id="rememberMe-checkbox" />
+            remember me?
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Log In" />
+    </p>
+</form>

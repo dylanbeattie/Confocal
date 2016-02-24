@@ -1,0 +1,23 @@
+﻿@model System.Collections.Generic.List<Confocal.Data.TalkReaction>
+
+@{
+    ViewBag.Title = "Reactions";
+}
+<table>
+    <tr>
+        <th>Enjoy?</th>
+        <th>Learn?</th>
+        <th>One thing you liked</th>
+        <th>One idea to improve</th>
+        <th>When?</th>
+    </tr>
+    @foreach (var reaction in Model) {
+        <tr>
+            <td>@reaction.Enjoy</td>
+            <td>@reaction.Learn</td>
+            <td>@reaction.OneThingYouLiked</td>
+            <td>@reaction.OneIdeaToImprove</td>
+            <td>@(reaction.Submitted.HasValue ? reaction.Submitted.Value.ToString("HH:mm ddd d MMM") : "-")</td>
+        </tr>
+    }
+</table>

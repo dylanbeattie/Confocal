@@ -1,0 +1,31 @@
+﻿@model Confocal.Controllers.TalkListViewData
+
+@{
+    ViewBag.Title = "Talks!";
+}
+<form action="@Url.Action("CreateTalk", "Admin")" method="POST">
+    <table>
+        @foreach (var talk in Model.AllTalks) {
+            <tr>
+                <td>@talk.Code</td>
+                <td>@talk.Title</td>
+                <td>@talk.SpeakerName</td>
+                <td><a href="@Url.Action("Reactions", "Admin", new { talk = talk.TalkGuid })">reactions</a></td>
+            </tr>
+        }
+        <tr>
+            <td>
+                <input type="text" name="code" placeholder="code" />
+            </td>
+            <td>
+                <input type="text" name="title" placeholder="title" />
+            </td>
+            <td>
+                <input type="text" name="speakerName" placeholder="speaker name" />
+            </td>
+            <td>
+                <input type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</form>
