@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Web;
@@ -40,6 +39,7 @@ namespace Confocal.Controllers {
             }
         }
 
+        [Authorize]
         public ActionResult CreateTalk(TalkViewData post) {
             using (var db = new ConfocalDbContext()) {
                 var talk = new Talk() {
@@ -54,6 +54,7 @@ namespace Confocal.Controllers {
             }
         }
 
+        [Authorize]
         public ActionResult Reactions(Guid talk) {
             using (var db = new ConfocalDbContext()) {
                 var talkFromDb = db.Talks.FirstOrDefault(t => t.TalkGuid == talk);
@@ -61,10 +62,5 @@ namespace Confocal.Controllers {
                 return (View(talkFromDb.Reactions.ToList()));
             }
         }
-    }
-
-    public class TalkListViewData {
-        public IEnumerable<TalkViewData> AllTalks { get; set; }
-        public TalkViewData CurrentTalk { get; set; }
     }
 }

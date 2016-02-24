@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Confocal.Controllers {
+namespace Confocal.Models {
     public class LoginViewModel {
         [Required]
         public string UserName { get; set; }

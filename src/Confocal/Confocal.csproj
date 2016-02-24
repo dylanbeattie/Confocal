@@ -179,7 +179,8 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginViewModel.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
+    <Compile Include="Models\TalkListViewData.cs" />
     <Compile Include="Controllers\TalksController.cs" />
     <Compile Include="Models\TalkViewData.cs" />
     <Compile Include="Data\ConfocalDbContext.cs" />
