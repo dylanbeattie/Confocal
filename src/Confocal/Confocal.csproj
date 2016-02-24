@@ -122,6 +122,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="3C7EF90B7585F7463325C8C2F79CEBCF.txt" />
     <Content Include="Content\images\images\ratings_active.png" />
     <Content Include="Content\images\images\ratings_normal.png" />
     <Content Include="Content\themes\base\accordion.css" />
