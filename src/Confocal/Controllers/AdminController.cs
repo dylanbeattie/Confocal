@@ -43,6 +43,7 @@ namespace Confocal.Controllers {
         public ActionResult CreateTalk(TalkViewData post) {
             using (var db = new ConfocalDbContext()) {
                 var talk = new Talk() {
+                    TalkGuid = Guid.NewGuid(),
                     Code = post.Code,
                     Title = post.Title,
                     SpeakerName = post.SpeakerName,
