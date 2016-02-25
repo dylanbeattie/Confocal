@@ -33,7 +33,7 @@ input[type=submit] {
 form#code-form input[type=submit]:hover {
   background-color: #6c6; }
 
-form.feedback fieldset label {
+form.feedback fieldset label, span.rating {
   width: 48px;
   height: 48px;
   margin: 2px;
@@ -50,6 +50,9 @@ form.feedback fieldset label {
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden; }
+
+span.rating {
+  margin: 0px auto; }
 
 form.feedback fieldset label input[type=radio] {
   visibility: hidden; }
@@ -77,26 +80,28 @@ form.feedback div label {
   display: block;
   margin: 4px 0; }
 
-form.feedback label.err {
+form.feedback label.err, span.rating.err {
   background-position: 8px 8px; }
 
-form.feedback label.sad {
+form.feedback label.sad, span.rating.sad {
   background-position: 8px -40px; }
 
-form.feedback label.yes {
+form.feedback label.yes, span.rating.yes {
   background-position: 8px -88px; }
 
-form.feedback label.meh {
+form.feedback label.meh, span.rating.meh {
   background-position: 8px -136px; }
 
-form.feedback label.wow {
+form.feedback label.wow, span.rating.wow {
   background-position: 8px -184px; }
 
-form.feedback label.zzz {
+form.feedback label.zzz, span.rating.zzz {
   background-position: 8px -232px; }
 
 form.feedback label.active {
-  border-color: #999;
+  border-color: #999; }
+
+form.feedback label.active, span.rating {
   background-image: url(/Content/Images/images/ratings_active.png); }
 
 .preload {

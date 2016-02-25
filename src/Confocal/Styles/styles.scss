@@ -44,7 +44,7 @@ form#code-form input[type=submit]:hover {
 $icon_scaling: 1.5;
 $icon_padding: 8px;
 
-form.feedback fieldset label {
+form.feedback fieldset label, span.rating {
     width: (72px /$icon_scaling);
     height: (72px /$icon_scaling);
     margin: 2px;
@@ -62,20 +62,25 @@ form.feedback fieldset label {
     white-space: nowrap;
     overflow: hidden;
 }
+span.rating { margin: 0px auto; }
+
 form.feedback fieldset label input[type=radio] {
     visibility: hidden;
 }
+
 form.feedback p {
     font-size: 13px;
 }
+
 form.feedback fieldset {
     border: 0;
     margin: 0;
     padding: 0;
 }
 
-form.feedback textarea, form.feedback input[type=text], form.feedback input[type=submit] { 
-    font-size: 16px; width: 300px; 
+form.feedback textarea, form.feedback input[type=text], form.feedback input[type=submit] {
+    font-size: 16px;
+    width: 300px;
     padding: 4px;
     font-family: Trebuchet MS, Arial, sans-serif;
     box-sizing: border-box;
@@ -91,35 +96,56 @@ form.feedback div label {
     margin: 4px 0;
 }
 
-form.feedback label.err {
+form.feedback label.err, span.rating.err {
     background-position: $icon_padding $icon_padding;
 }
-form.feedback label.sad {
+
+form.feedback label.sad, span.rating.sad {
     background-position: $icon_padding (-72px / $icon_scaling) + $icon_padding;
 }
 
-form.feedback label.yes {
-    background-position: $icon_padding (-72px * 2 / $icon_scaling) + $icon_padding
+form.feedback label.yes, span.rating.yes {
+    background-position: $icon_padding (-72px * 2 / $icon_scaling) + $icon_padding;
 }
 
-form.feedback label.meh {
-    background-position: $icon_padding (-72px * 3 / $icon_scaling) + $icon_padding
+form.feedback label.meh, span.rating.meh {
+    background-position: $icon_padding (-72px * 3 / $icon_scaling) + $icon_padding;
 }
 
-form.feedback label.wow {
-    background-position: $icon_padding (-72px * 4 / $icon_scaling) + $icon_padding
+form.feedback label.wow, span.rating.wow {
+    background-position: $icon_padding (-72px * 4 / $icon_scaling) + $icon_padding;
 }
-    
-form.feedback label.zzz {
-    background-position: $icon_padding (-72px * 5 / $icon_scaling) + $icon_padding
+
+form.feedback label.zzz, span.rating.zzz {
+    background-position: $icon_padding (-72px * 5 / $icon_scaling) + $icon_padding;
 }
 
 form.feedback label.active {
     border-color: #999;
+}
+
+form.feedback label.active, span.rating {
     background-image: url(/Content/Images/images/ratings_active.png);
 }
 
-.preload { opacity: 0; position: absolute; top: -9999px; left: -9999px; }
-table { border-collapse: collapse; }
-table tr td, table tr th { text-align: left; padding: 8px; border: 1px solid #999; }
-table tr td input { width: 100%; box-sizing: border-box; }
+.preload {
+    opacity: 0;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table tr td, table tr th {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #999;
+}
+
+table tr td input {
+    width: 100%;
+    box-sizing: border-box;
+}

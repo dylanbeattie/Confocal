@@ -5,19 +5,17 @@
 }
 <table>
     <tr>
-        <th>Enjoy?</th>
-        <th>Learn?</th>
-        <th>One thing you liked</th>
-        <th>One idea to improve</th>
-        <th>When?</th>
+        <th style="text-align: center;">Did you<br />enjoy it?</th>
+        <th style="text-align: center;">Did you<br /> learn anything?</th>
+        <th>One thing you liked about the talk:</th>
+        <th>One idea that could improve the talk:</th>
     </tr>
     @foreach (var reaction in Model) {
         <tr>
-            <td>@reaction.Enjoy</td>
-            <td>@reaction.Learn</td>
+            <td style="text-align: center;"><span class="rating @reaction.Enjoy" /></td>
+            <td style="text-align: center;"><span class="rating @reaction.Learn" /></td>
             <td>@reaction.OneThingYouLiked</td>
             <td>@reaction.OneIdeaToImprove</td>
-            <td>@(reaction.Submitted.HasValue ? reaction.Submitted.Value.ToString("HH:mm ddd d MMM") : "-")</td>
         </tr>
     }
 </table>
